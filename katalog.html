@@ -166,6 +166,63 @@
         .btn-primary:hover {
             background-color: #0056b3;
         }
+        
+        footer {
+            border-top: 1px solid #444;
+            /* Garis pembatas di atas footer */
+            color: #f8f9fa;
+            /* Warna teks utama */
+        }
+        
+        footer h5 {
+            font-weight: bold;
+            color: #ffffff;
+            /* Warna teks header */
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: #dcdcdc;
+            /* Warna teks isi */
+        }
+        
+        footer .img-barcode {
+            max-width: 120px;
+            /* Ukuran maksimal gambar barcode */
+            height: auto;
+            /* Menjaga proporsi gambar */
+            border: 1px solid #555;
+            /* Bingkai gambar */
+            border-radius: 8px;
+            /* Sudut melengkung */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            /* Efek bayangan */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        footer .img-barcode:hover {
+            transform: scale(1.1);
+            /* Sedikit memperbesar saat dihover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+            /* Bayangan lebih jelas saat dihover */
+        }
+        
+        footer .social-icons a {
+            color: #dcdcdc;
+            /* Warna ikon sesuai tema gelap */
+            transition: color 0.3s ease;
+            /* Efek transisi warna */
+        }
+        
+        footer .social-icons a:hover {
+            color: #007bff;
+            /* Warna ikon saat dihover */
+        }
+        
+        footer .text-muted {
+            color: #b0b0b0 !important;
+            /* Warna teks muted */
+        }
     </style>
 
 </head>
@@ -333,15 +390,41 @@
 
 
     <!-- Footer -->
-    <footer class="mt-5">
+    <footer class="mt-5 bg-dark text-light py-4">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">Kami buka mulai Senin - Sabtu</p>
+            <div class="row align-items-center">
+                <!-- Informasi Operasional -->
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5 class="mb-2">Jam Operasional</h5>
+                    <p class="mb-0">Senin - Sabtu: 08.00 - 17.00</p>
+                    <p class="mb-0 text-muted">Tutup pada hari Minggu dan libur nasional</p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">muji.perkasacv@gmail.com | 081230189558</p>
+                <!-- Barcode Section -->
+                <div class="col-md-4 text-center">
+                    <h5 class="mb-3">Temukan Kami</h5>
+                    <img src="asset/image'/produk/linktree-3.png" alt="Barcode" class="img-barcode">
+                    <p class="mt-2 text-muted">Scan untuk informasi lebih lanjut</p>
                 </div>
+                <!-- Informasi Kontak -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5 class="mb-2">Hubungi Kami</h5>
+                    <p class="mb-0">Email: muji.perkasacv@gmail.com</p>
+                    <p class="mb-0">Telepon: 0812-3018-9558</p>
+                    <div class="social-icons mt-2">
+                        <a href="#" class="me-2" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook fa-lg text-light"></i>
+                        </a>
+                        <a href="#" class="me-2" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram fa-lg text-light"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin fa-lg text-light"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0 text-muted">&copy; 2024 CV. Muji Perkasa. All rights reserved.</p>
             </div>
         </div>
     </footer>
