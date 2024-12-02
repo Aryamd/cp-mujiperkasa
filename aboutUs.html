@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokument Projek</title>
+
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+         :root {
+            --primary-color: #000000;
+            --text-light: #ffffff;
+            --section-spacing: 6rem;
+        }
+        
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        section {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .top-info {
+            background-color: #f8f9fa;
+            font-size: 14px;
+            color: #333;
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .top-info p {
+            margin: 0;
+            text-align: right;
+        }
+        
+        .top-info a {
+            color: #333;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        .top-info a:hover {
+            color: #007bff;
+        }
+        /* Navbar styles */
+        
+        .navbar {
+            background-color: #000;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 15px;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #ddd;
+        }
+        /* Hero Section */
+        
+        .hero-section {
+            height: 60vh;
+            min-height: 500px;
+            position: relative;
+            color: var(--text-light);
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 50px;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #333;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 2rem 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Informasi Operasional -->
+    <div class="top-info sticky-top">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Social Media Icons -->
+                <div>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- Operational Info -->
+                <p>Kami buka mulai Senin - Sabtu | Email: muji.perkasacv@gmail.com | Telp: 081230189558</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="index.html">
+                <img src="asset/image'/produk/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Muji Perkasa
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutUs.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="katalog.html">Katalog Barang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artikel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="display-4 fw-bold mb-4">Tentang Muji Perkasa</h1>
+                <p class="lead mb-4">Solusi Terpercaya untuk Pengolahan Air Bersih dan Pengelolaan Limbah</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- About Section -->
+        <section data-aos="fade-up" class="">
+            <div class="container">
+                <h2 class="section-title">Tentang Kami</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 text-center">
+                        <h3>Mengenal Kami Lebih Dekat untuk Mewujudkan Sistem Perawatan Air yang Lebih Baik</h3>
+                        <p class="lead mt-4">CV Muji Perkasa adalah perusahaan yang berkomitmen untuk memberikan solusi terbaik di bidang pengolahan air bersih, air minum, dan pengelolaan limbah.</p>
+                        <p>Kami percaya bahwa akses terhadap air bersih adalah hak setiap individu, dan oleh karena itu, kami berupaya untuk menyediakan layanan berkualitas tinggi yang memenuhi standar kesehatan dan keselamatan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="py-5" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title">Visi & Misi</h2>
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="mission-vision-card">
+                            <h4>Misi</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">✓ Mengembangkan teknologi filter air yang inovatif</li>
+                                <li class="mb-3">✓ Memberikan layanan pengelolaan limbah ramah lingkungan</li>
+                                <li class="mb-3">✓ Mengedukasi masyarakat tentang konservasi air</li>
+                                <li class="mb-3">✓ Berkolaborasi untuk meningkatkan akses air bersih</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="mission-vision-card">
+                            <h4>Visi</h4>
+                            <p>Menghadirkan solusi air bersih dan pengelolaan limbah yang berkelanjutan untuk masa depan yang lebih hijau.
+                            </p>
+                            <P>✓ Mengembangkan teknologi filter air yang inovatif</P>
+                            <P>✓ Mengembangkan teknologi filter air yang inovatif</P>
+                            <P>✓ Mengembangkan teknologi filter air yang inovatif</P>
+                            <P>✓ Mengembangkan teknologi filter air yang inovatif</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile-section py-5" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title">Profile Owner</h2>
+                <div class="row align-items-center g-4">
+                    <div class="col-md-4" data-aos="fade-right">
+                        <img src="/api/placeholder/400/400" alt="Profile Owner" class="img-fluid shadow">
+                    </div>
+                    <div class="col-md-8" data-aos="fade-left">
+                        <h3 class="mb-4">Pemimpin dengan Visi</h3>
+                        <p class="lead">Dengan pengalaman lebih dari 15 tahun di industri pengolahan air, kami berkomitmen untuk memberikan solusi terbaik bagi setiap klien.</p>
+                        <p>Kami percaya bahwa setiap proyek adalah kesempatan untuk membuat perubahan positif dalam masyarakat dan lingkungan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section class="documentation-section" data-aos="fade-up">
+            <div class="container">
+                <h5 class="section-title display-6">Dokumentasi</h5>
+
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" alt="Ini Gambar" class="img-thumbnail border border-0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">Kami buka mulai Senin - Sabtu</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">muji.perkasacv@gmail.com | 081230189558</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="asset/bootstrap/js/bootstrap.bundle.min.js "></script>
+</body>
+
+</html>

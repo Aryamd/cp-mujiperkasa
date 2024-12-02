@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokument Projek</title>
+
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        section {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .top-info {
+            background-color: #f8f9fa;
+            font-size: 14px;
+            color: #333;
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .top-info p {
+            margin: 0;
+            text-align: right;
+        }
+        
+        .top-info a {
+            color: #333;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        .top-info a:hover {
+            color: #007bff;
+        }
+        /* Navbar styles */
+        
+        .navbar {
+            background-color: #000;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 15px;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #ddd;
+        }
+        /* Hero Section */
+        
+        .hero {
+            position: relative;
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero a {
+            padding: 10px 25px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .hero a:hover {
+            background-color: #0056b3;
+        }
+        
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+        
+        .carousel-indicators .active {
+            background-color: var(--primary-color);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 50px;
+        }
+        
+        .service-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .service-description {
+            color: var(--secondary-color);
+        }
+        
+        .why-choose-us {
+            background-color: #f8f9fa;
+        }
+        
+        .feature-box {
+            display: flex;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+        
+        .feature-icon {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 10px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .feature-content h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .feature-content p {
+            color: var(--secondary-color);
+            margin-bottom: 0;
+        }
+        
+        .image-placeholder {
+            background-color: #e9ecef;
+            height: 100%;
+            min-height: 400px;
+            border-radius: 10px;
+        }
+        /* Parallax Section Styles */
+        
+        .parallax-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 100px 0;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+        
+        .parallax-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .parallax-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .parallax-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-contact i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-contact:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .parallax-title {
+                font-size: 2rem;
+            }
+            .parallax-subtitle {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            .btn-contact {
+                padding: 12px 25px;
+            }
+        }
+        /* Products Section Styles */
+        
+        .products-section {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #333;
+        }
+        
+        .product-card {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 1rem 0;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .buy-button {
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            border: 1px solid #333;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .buy-button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .products-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .best-partners .partner-card {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .best-partners .partner-card h4 {
+                font-weight: bold;
+                color: #333;
+            }
+            .best-partners .partner-card p {
+                font-size: 0.9rem;
+                color: #777;
+            }
+            .best-partners .partner-card ul {
+                padding-left: 1.5rem;
+                color: #555;
+            }
+            .best-partners .partner-card ul li {
+                list-style: disc;
+                margin-bottom: 0.5rem;
+            }
+            .best-partners .partner-card img {
+                object-fit: contain;
+                max-width: 100%;
+            }
+            .partner-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                .customer-trust-section {
+                    padding: 40px 0;
+                    text-align: center;
+                }
+                .section-title {
+                    font-size: 32px;
+                    color: #333;
+                    margin-bottom: 20px;
+                    font-weight: normal;
+                }
+                .section-subtitle {
+                    color: #666;
+                    max-width: 800px;
+                    margin: 0 auto 40px auto;
+                    line-height: 1.6;
+                }
+                .customer-gallery {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .gallery-item img {
+                    width: 100%;
+                    height: auto;
+                }
+                /* Simple mobile responsive */
+                @media (max-width: 768px) {
+                    .customer-gallery {
+                        grid-template-columns: 1fr;
+                    }
+                    .section-title {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+        
+        .testimonial-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .testimonial-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .testimonial-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-company {
+            color: #888;
+            font-size: 14px;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 992px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+            .testimonial-item {
+                padding: 15px;
+            }
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .faq-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #fff;
+            color: #000;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, 0.125);
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
+        }
+        
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
+        }
+        
+        .accordion-button {
+            padding: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .accordion-body {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        /* Center the question text */
+        
+        .accordion-button span {
+            flex-grow: 1;
+            text-align: center;
+            margin-right: 24px;
+            /* Compensate for the plus/minus icon */
+        }
+        
+        .maps-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 50px;
+        }
+        
+        .map-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .map-responsive {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .map-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-info {
+            padding-left: 30px;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .form-control {
+            margin-bottom: 20px;
+        }
+        
+        #status-message {
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Informasi Operasional -->
+    <div class="top-info sticky-top">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Social Media Icons -->
+                <div>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- Operational Info -->
+                <p>Kami buka mulai Senin - Sabtu | Email: muji.perkasacv@gmail.com | Telp: 081230189558</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="index.html">
+                <img src="asset/image'/produk/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Muji Perkasa
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutUs.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="katalog.html">Katalog Barang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artikel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Solusi Terbaik untuk Air Bersih</h1>
+            <p>Kami berkomitmen menyediakan solusi terbaik untuk kebutuhan air bersih Anda.</p>
+            <a href="#">Hubungi Kami</a>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- Services Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Hal Yang Kami Tawarkan</h2>
+                <p class="section-subtitle">Kami Hadir dengan Produk dan Layanan Berkualitas<br>yang Siap Menjawab Tantangan Anda.
+                </p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="service-title">Konsultasi Profesional</h3>
+                            <p class="service-description">Kami menawarkan layanan konsultasi untuk membantu Anda menemukan solusi terbaik yang sesuai dengan kebutuhan spesifik bisnis Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="service-title">Konsultasi Profesional</h3>
+                            <p class="service-description">Kami menawarkan layanan konsultasi untuk membantu Anda menemukan solusi terbaik yang sesuai dengan kebutuhan spesifik bisnis Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3 class="service-title">Konsultasi Profesional</h3>
+                            <p class="service-description">Kami menawarkan layanan konsultasi untuk membantu Anda menemukan solusi terbaik yang sesuai dengan kebutuhan spesifik bisnis Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3 class="service-title">Konsultasi Profesional</h3>
+                            <p class="service-description">Kami menawarkan layanan konsultasi untuk membantu Anda menemukan solusi terbaik yang sesuai dengan kebutuhan spesifik bisnis Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3 class="service-title">Konsultasi Profesional</h3>
+                            <p class="service-description">Kami menawarkan layanan konsultasi untuk membantu Anda menemukan solusi terbaik yang sesuai dengan kebutuhan spesifik bisnis Anda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section why-choose-us">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <h2 class="section-title text-start mb-3">Kenapa Anda Harus Pilih Kami?</h2>
+                        <p class="section-subtitle text-start">Karena Kami Memberikan Solusi yang Teruji dengan Kualitas Terbaik dan Layanan Terpercaya.</p>
+
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Pengalaman yang Teruji</h4>
+                                <p>Kami telah membangun reputasi solid melalui pengalaman dan kerja keras, menjadikan kami mitra terpercaya dalam industri ini.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Pengalaman yang Teruji</h4>
+                                <p>Kami telah membangun reputasi solid melalui pengalaman dan kerja keras, menjadikan kami mitra terpercaya dalam industri ini.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Pengalaman yang Teruji</h4>
+                                <p>Kami telah membangun reputasi solid melalui pengalaman dan kerja keras, menjadikan kami mitra terpercaya dalam industri ini.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Pengalaman yang Teruji</h4>
+                                <p>Kami telah membangun reputasi solid melalui pengalaman dan kerja keras, menjadikan kami mitra terpercaya dalam industri ini.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax Section -->
+        <section class="parallax-section">
+            <div class="container">
+                <div class="parallax-content">
+                    <h2 class="parallax-title">Keahlian yang Terbukti, Kualitas yang Terjamin</h2>
+                    <p class="parallax-subtitle">Bersama kami, wujudkan lingkungan yang lebih bersih dan sehat melalui teknologi terkini di bidang water filter dan waste management.</p>
+                    <a href="https://wa.me/6282290855670" target="_blank" rel="noopener" class="btn-contact">
+                        <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- produk -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-heading">Pilihan Produk Kami</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="/api/placeholder/400/300" class="product-image" alt="Kitchen Set Modern">
+                            <h3 class="product-title">Produk 1</h3>
+                            <p class="product-price">Rp. 30.000</p>
+                            <a href="#" class="buy-button">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="/api/placeholder/400/300" class="product-image" alt="Living Room Design">
+                            <h3 class="product-title">Produk 1</h3>
+                            <p class="product-price">Rp. 30.000</p>
+                            <a href="#" class="buy-button">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="/api/placeholder/400/300" class="product-image" alt="Modern Chair">
+                            <h3 class="product-title">Produk 1</h3>
+                            <p class="product-price">Rp. 30.000</p>
+                            <a href="#" class="buy-button">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="/api/placeholder/400/300" class="product-image" alt="Bathroom Design">
+                            <h3 class="product-title">Produk 1</h3>
+                            <p class="product-price">Rp. 30.000</p>
+                            <a href="#" class="buy-button">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- mitra -->
+        <section class="best-partners py-5">
+            <div class="container-fluid">
+                <h2 class="text-center mb-4">Mitra Terbaik Kami</h2>
+                <p class="text-center mb-5">Kami bangga bermitra dengan perusahaan-perusahaan ternama yang mendukung kami dalam menyediakan solusi terbaik untuk air bersih dan pengelolaan limbah.</p>
+                <div class="partner-list">
+                    <!-- Partner 1 -->
+                    <div class="partner-card p-4 mb-4 border rounded shadow-sm">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="partner1.jpg" alt="Partner 1" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <h4 class="mb-2">Hydranautics</h4>
+                                <p class="text-muted">(Nitto Group Company)</p>
+                                <ul>
+                                    <li>Membran berkualitas tinggi yang menghemat energi.</li>
+                                    <li>Teknologi RO dengan efisiensi tinggi untuk pengurangan garam dan kontaminan.</li>
+                                    <li>Berpengalaman lebih dari 50 tahun di industri filtrasi air.</li>
+                                    <li>Layanan pelanggan dan dukungan teknis yang komprehensif.</li>
+                                    <li>Dikenal secara global dengan reputasi terpercaya.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="partner-card p-4 mb-4 border rounded shadow-sm">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="partner2.jpg" alt="Partner 2" class="img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                                <h4 class="mb-2 ">Toray Industries</h4>
+                                <p class="text-muted ">(Global Water Solutions)</p>
+                                <ul>
+                                    <li>Pemimpin dalam pengembangan teknologi filtrasi.</li>
+                                    <li>Produk yang ramah lingkungan dan tahan lama.</li>
+                                    <li>Layanan dukungan teknis di seluruh dunia.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="partner-card p-4 mb-4 border rounded shadow-sm ">
+                        <div class="row align-items-center ">
+                            <div class="col-md-4 text-center ">
+                                <img src="partner3.jpg " alt="Partner 3 " class="img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                                <h4 class="mb-2 ">Dow Water</h4>
+                                <p class="text-muted ">(A Specialty Division)</p>
+                                <ul>
+                                    <li>Teknologi inovatif untuk filtrasi air modern.</li>
+                                    <li>Solusi hemat biaya untuk air bersih.</li>
+                                    <li>Keberlanjutan menjadi inti pengembangan produk.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more partners as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- logo customer -->
+        <section class="customer-trust-section">
+            <div class="container">
+                <h2 class="section-title">Kepercayaan dari Pelanggan Terhormat</h2>
+                <p class="section-subtitle">
+                    Kami bangga melayani berbagai pelanggan, dari rumah tangga hingga industri, yang mempercayakan kebutuhan air bersih dan pengelolaan limbah kepada kami.
+                </p>
+
+                <div class="customer-gallery">
+                    <div class="row g-5">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img src="/api/placeholder/400/300" alt="Modern Kitchen Interior">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- testimonial -->
+        <section class="testimonial-section">
+            <div class="container-fluid">
+                <h2 class="section-title">Apa Kata Pelanggan Kami?</h2>
+
+                <div class="testimonial-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item">
+                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <p class="testimonial-text">
+                            Layanan dari CV Muji Perkasa sangat memuaskan. Teknisi mereka profesional dan sangat membantu dalam meningkatkan kualitas air di depot kami. Spare part yang mereka sediakan juga berkualitas tinggi.
+                        </p>
+                        <div class="testimonial-author">Anonim</div>
+                        <div class="testimonial-company">Company name</div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item">
+                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <p class="testimonial-text">
+                            Kami telah bekerja sama dengan CV Muji Perkasa untuk pengolahan limbah di hotel kami. Mereka memberikan solusi yang efisien dan ramah lingkungan. Sangat merekomendasikan layanan mereka!
+                        </p>
+                        <div class="testimonial-author">Anonim</div>
+                        <div class="testimonial-company">Company name</div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-item">
+                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <p class="testimonial-text">
+                            "CV Muji Perkasa telah menjadi mitra terpercaya kami dalam pengelolaan air dan limbah. Layanan perawatan yang mereka tawarkan membuat sistem kami berjalan dengan optimal tanpa masalah."
+                        </p>
+                        <div class="testimonial-author">Anonim</div>
+                        <div class="testimonial-company">Company name</div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-item">
+                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <p class="testimonial-text">
+                            "CV Muji Perkasa telah menjadi mitra terpercaya kami dalam pengelolaan air dan limbah. Layanan perawatan yang mereka tawarkan membuat sistem kami berjalan dengan optimal tanpa masalah."
+                        </p>
+                        <div class="testimonial-author">Anonim</div>
+                        <div class="testimonial-company">Company name</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- pertanyaan -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="faq-title">FAQ</h2>
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                <span>1. Apa itu sistem filtrasi air dan bagaimana cara kerjanya?</span>
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sistem filtrasi air adalah proses penyaringan air untuk menghilangkan kontaminan dan menjadikan air lebih aman untuk dikonsumsi. Cara kerjanya melibatkan beberapa tahap penyaringan menggunakan berbagai media filter seperti karbon aktif, pasir silika,
+                                dan membrane reverse osmosis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                <span>2. Mengapa penting untuk memiliki sistem pengolahan air limbah yang efisien?</span>
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sistem pengolahan air limbah yang efisien penting untuk menjaga kelestarian lingkungan, mencegah pencemaran air tanah, dan memenuhi standar regulasi lingkungan. Sistem ini juga membantu menghemat biaya jangka panjang dan mendukung keberlanjutan sumber
+                                daya air.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                <span>3. Bagaimana cara memilih sistem filtrasi air yang tepat untuk kebutuhan rumah
+                                    tangga?</span>
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Pemilihan sistem filtrasi air untuk rumah tangga perlu mempertimbangkan beberapa faktor seperti kualitas air input, kebutuhan air harian, ruang yang tersedia, dan anggaran. Konsultasi dengan ahli dapat membantu menentukan sistem yang paling sesuai.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                <span>4. Apa saja manfaat menggunakan jasa servis depo air minum secara berkala?</span>
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Servis berkala memastikan kualitas air tetap optimal, memperpanjang umur peralatan, menghemat biaya perbaikan besar, dan menjamin kesehatan konsumen. Pemeriksaan rutin juga dapat mendeteksi masalah sejak dini.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                <span>5. Apakah ada solusi ramah lingkungan untuk pengelolaan limbah?</span>
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ya, terdapat berbagai solusi ramah lingkungan seperti penggunaan biofilter, sistem daur ulang air, dan pengolahan limbah organik menjadi kompos. Teknologi modern memungkinkan pengelolaan limbah yang efektif dan berkelanjutan.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="maps-section">
+            <h2 class="section-title">Kunjungi Sekarang</h2>
+            <div class="map-container">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.907894384799!2d112.43273927433361!3d-7.475422973701469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780da9e4d33e5b%3A0xe119e35afcf3795f!2sCV.%20Muji%20Perkasa!5e0!3m2!1sid!2sid!4v1733113267365!5m2!1sid!2sid"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- email -->
+        <div class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label class="form-label" for="">Your Name</label>
+                                <input type="text" class="form-control" placeholder="Masukkan Username" name="user_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" name="user_email" placeholder="Masukkan Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Masukkan Pesan"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div class="alert" id="status-message" role="alert"></div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <h2>CONTACT US</h2>
+                            <p class="subtitle">WE ARE AVAILABLE 24/7</p>
+                            <p>12 Pike St, New York, NY 10002</p>
+                            <p>12 Pike St, New York, NY 10002</p>
+                            <p><strong>Email:</strong>arilmamat71@gmail.com</p>
+                            <p><strong>Phone number</strong></p>
+                            <p>1-541-754-3010</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="asset/bootstrap/js/bootstrap.bundle.min.js "></script>
+</body>
+
+</html>
