@@ -133,6 +133,17 @@
             background-color: #0056b3;
         }
         
+        .card .card-body img {
+            width: 100%;
+            /* Sesuaikan dengan lebar container */
+            height: 200px;
+            /* Tetapkan tinggi yang konsisten */
+            object-fit: cover;
+            /* Menjaga proporsi gambar tanpa distorsi */
+            border-radius: 8px;
+            /* Opsional: Tambahkan sudut melengkung */
+        }
+        
         footer {
             background-color: var(--primary-color);
             color: var(--text-light);
@@ -262,7 +273,7 @@
                         <a class="nav-link" href="aboutUs.html">Tentang Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Layanan</a>
+                        <a class="nav-link" href="layanan.html">Layanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="katalog.html">Katalog Barang</a>
@@ -279,7 +290,7 @@
     <!-- Hero Section -->
     <div class="hero" id="hero">
         <div class="hero-content">
-            <h1>Solusi Terbaik untuk Air Bersih BY Arya MD</h1>
+            <h1>Solusi Terbaik untuk Air Bersih </h1>
             <p>Kami berkomitmen menyediakan solusi terbaik untuk kebutuhan air bersih Anda.</p>
             <a href="#">Hubungi Kami</a>
         </div>
@@ -290,7 +301,7 @@
             <div class="row">
 
                 <!-- list produk -->
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12 mb-3">
                     <div class="card">
                         <div class="card-body text-center">
                             <img src="asset/image'/produk/tandon.jpg" alt="tandon" class="img-thumbnail border border-0">
@@ -304,19 +315,49 @@
                 <!-- end product -->
 
                 <!-- list produk -->
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12 mb-3">
                     <div class="card">
                         <div class="card-body text-center">
                             <img src="asset/image'/produk/tandon-jumbo.png" alt="tandon" class="img-thumbnail border border-0">
-                            <h5 class="card-title">Nama Produk</h5>
+                            <h5 class="card-title">RO 2000gpd</h5>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jumbo">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJumbo">
                                 Lihat Detail </button>
+                            </div>
+                            </div>
+                            </div>
+                            <!-- end product -->
+                            
+                            <!-- list produk -->
+                            <div class="col-md-3 col-sm-12 mb-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="asset/image'/produk/Mesin Ro Kapasitas 2000 ,4000 GPD.txt" alt="tandon"
+                                            class="img-thumbnail border border-0">
+                                        <h5 class="card-title">RO 2000gpd</h5>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRO4000">
+                                            Lihat Detail </button>
                         </div>
                     </div>
                 </div>
                 <!-- end product -->
 
+
+                <!-- list produk end point -->
+                <div class="col-md-3 col-sm-12 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="asset/image'/produk/Mesin RO kapasitas 2000 GPD.jpg" alt="tandon"
+                                class="img-thumbnail border border-0">
+                            <h5 class="card-title">RO 2000gpd</h5>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Lihat Detail </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end product -->
 
             </div>
         </div>
@@ -357,7 +398,10 @@
     <!-- end modal tandon -->
 
     <!-- modal tandon -->
-    <div class="modal fade" id="jumbo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- end modal tandon -->
+
+<!-- modal tandon -->
+<div class="modal fade" id="modalJumbo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
@@ -373,6 +417,74 @@
                         <!-- Details -->
                         <div class="col-md-7">
                             <h3 class="fw-bold">Nama Produk</h3>
+                            <p class="text-muted">Merek: <span class="text-primary">Nama Merek</span></p>
+                            <p class="mt-3">Deskripsi produk ini mencakup fitur unggulan dan detail lengkap untuk pelanggan.
+                            </p>
+                            <h4 class="fw-bold text-success mt-4">Rp 250,000</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal tandon -->
+
+    <!-- modal tandon -->
+    <div class="modal fade" id="modalRO4000" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Image -->
+                        <div class="col-md-5">
+                            <img src="asset/image'/produk/Mesin Ro Kapasitas 2000 ,4000 GPD.txt" alt="Product Image"
+                                class="img-fluid rounded shadow">
+                        </div>
+                        <!-- Details -->
+                        <div class="col-md-7">
+                            <h3 class="fw-bold">Nama Produk</h3>
+                            <p class="text-muted">Merek: <span class="text-primary">Nama Merek</span></p>
+                            <p class="mt-3">Deskripsi produk ini mencakup fitur unggulan dan detail lengkap untuk pelanggan.
+                            </p>
+                            <h4 class="fw-bold text-success mt-4">Rp 250,000</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal tandon -->
+    
+    <!-- modal RO End point-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Produk</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Image -->
+                        <div class="col-md-5">
+                            <img src="asset/image'/produk/Mesin RO kapasitas 2000 GPD.jpg" alt="Product Image"
+                                class="img-fluid rounded shadow">
+                        </div>
+                        <!-- Details -->
+                        <div class="col-md-7">
+                            <h3 class="fw-bold">RO 2000</h3>
                             <p class="text-muted">Merek: <span class="text-primary">Nama Merek</span></p>
                             <p class="mt-3">Deskripsi produk ini mencakup fitur unggulan dan detail lengkap untuk pelanggan.
                             </p>
