@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <style>
         body {
@@ -48,7 +50,7 @@
         /* Navbar styles */
         
         .navbar {
-            background-color: #007bff;
+            background-color: #042447;
             padding-top: 10px;
             padding-bottom: 10px;
         }
@@ -85,6 +87,25 @@
             text-align: center;
             color: #fff;
             overflow: hidden;
+        }
+        
+        .hero-background {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
         
         .hero::before {
@@ -159,13 +180,16 @@
         }
         
         .service-card {
-            text-align: center;
-            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
         }
         
         .service-icon {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 48px;
+            margin-bottom: 1rem;
         }
         
         .service-title {
@@ -263,16 +287,14 @@
             border: none;
         }
         
-        .btn-contact i {
-            margin-right: 10px;
-            font-size: 1.2rem;
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
         }
         
-        .btn-contact:hover {
-            background-color: #128C7E;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
         }
         
         @media (max-width: 768px) {
@@ -736,8 +758,11 @@
     </nav>
 
     <!-- Hero Section -->
+
     <div class="hero" id="hero">
+        <div class="mask-container"></div>
         <div class="hero-content">
+            <div class="background-image" style="background-image: url('https://mujiperkasa.com/wp-content/uploads/2023/12/MP-BANNER-PUTIH-YT.jpg')"></div>
             <h1>Solusi Terbaik untuk Air Bersih</h1>
             <p>Kami berkomitmen menyediakan solusi terbaik untuk kebutuhan air bersih Anda.</p>
             <a href="#">Hubungi Kami</a>
@@ -747,7 +772,7 @@
     <main>
 
         <!-- Services Section -->
-        <section class="section">
+        <!-- <section class="section">
             <div class="container">
                 <h2 class="section-title">Hal Yang Kami Tawarkan</h2>
                 <p class="section-subtitle">Kami Hadir dengan Produk dan Layanan Berkualitas<br>yang Siap Menjawab Tantangan Anda.
@@ -799,8 +824,135 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+        <!-- </section> -->
+
+        <div class="container my-5">
+            <h1 class="text-center mb-5">Our Services</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-water service-icon"></i>
+                            <h5 class="card-title">Depo Air Minum</h5>
+                            <p class="card-text">Profesional Servis dan pasang Depo Air Minum.</p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#drinkingWaterModal">
+                                    Depo Air Minum
+                                </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-droplet-fill service-icon"></i>
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">Perawatan IPAL.</p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#wwptModal">
+                                    Learn More
+                                </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-scissors service-icon"></i>
+                            <h5 class="card-title">Salon Depo</h5>
+                            <p class="card-text">Pusat Perlengkapan Salon Terlengkap dan Terpercaya!.</p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#depotSalonModal">
+                                    Learn More
+                                </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-arrow-repeat service-icon"></i>
+                            <h5 class="card-title">Refill Depots</h5>
+                            <p class="card-text">Convenient refill stations for all your needs.</p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#refillDepotModal">
+                                    Learn More
+                                </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+        <!-- Modals -->
+        <div class="modal fade" id="drinkingWaterModal" tabindex="-1" aria-labelledby="SalonDepoModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="drinkingWaterModalLabel">Drinking Water Depot</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Our drinking water depot services provide high-quality, professional water solutions for your business. We offer a range of options to meet your specific needs, ensuring a reliable and convenient water supply for your customers.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="wwptModal" tabindex="-1" aria-labelledby="wwptModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="wwptModalLabel">WWTP Treatment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Our WWTP (Wastewater Treatment Plant) treatment services provide efficient and environmentally-friendly solutions for managing your facility's wastewater. We use advanced technologies to ensure your wastewater is properly treated
+                            and disposed of, helping you maintain compliance and protect the environment.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="depotSalonModal" tabindex="-1" aria-labelledby="depotSalonModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="depotSalonModalLabel">Salon Depo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>pusat penyedia perlengkapan dan kebutuhan salon yang menawarkan produk-produk berkualitas dengan harga grosir. Tempat ini biasanya menjadi pilihan utama bagi para pemilik salon, barbershop, atau individu yang membutuhkan peralatan
+                            dan produk kecantikan seperti kursi salon, alat styling rambut, skincare, cat rambut, hingga perlengkapan manicure dan pedicure. Dengan berbagai pilihan merek terpercaya, Salon Depo memastikan pelanggan mendapatkan solusi terbaik
+                            untuk kebutuhan kecantikan mereka.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="refillDepotModal" tabindex="-1" aria-labelledby="refillDepotModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="refillDepotModalLabel">Refill Depots</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Our refill depots provide convenient and eco-friendly solutions for your customers. With our network of refill stations, your customers can easily refill their reusable containers, reducing waste and promoting sustainability. We
+                            strive to make the refilling process quick, simple, and accessible for all your customers.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Why Choose Us Section -->
         <section class="section why-choose-us">
@@ -879,34 +1031,34 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="product-card">
-                            <img src="asset/image'/produk/Mesin RO kapasitas 2000 GPD.jpg" class="product-image" alt="Kitchen Set Modern">
-                            <h3 class="product-title">Mesin RO 2000 GPD</h3>
-                            <p class="product-price">Rp. 30.000</p>
-                            <a href="katalog.html" class="buy-button">Lihat Detail</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <img src="asset/image'/produk/tandon-jumbo.png" class="product-image" alt="Living Room Design">
-                            <h3 class="product-title">Tandon </h3>
+                            <img src="asset/image'/produk/2000 gpd RO.jpeg" class="product-image" alt="Kitchen Set Modern">
+                            <h3 class="product-title">Mesin RO Kapasitas 1000 RO</h3>
                             <p class="product-price">Rp. 5.000.000</p>
                             <a href="katalog.html" class="buy-button">Lihat Detail</a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="product-card">
+                            <img src="asset/image'/produk/tandon-jumbo.png" class="product-image" alt="Living Room Design">
+                            <h3 class="product-title">Tandon Pinguin Ukuran 350 L </h3>
+                            <p class="product-price">Rp. 550.000</p>
+                            <a href="katalog.html" class="buy-button">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="product-card">
                             <img src="asset/image'/produk/tandon.jpg" class="product-image" alt="Modern Chair">
-                            <h3 class="product-title">tandon-jumbo</h3>
-                            <p class="product-price">Rp.3.000.000</p>
+                            <h3 class="product-title">tandon Pinguin Ukuran 550 L</h3>
+                            <p class="product-price">Rp.1.500.000</p>
                             <a href="katalog.html" class="buy-button">Lihat Detail</a>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="product-card">
                             <img src="asset/image'/produk/Mesin Ro Kapasitas 2000 ,4000 GPD.txt" class="product-image" alt="Bathroom Design">
-                            <h3 class="product-title">Mesin RO 4000 GPD</h3>
-                            <p class="product-price">Rp.2.000.000</p>
-                            <a href="#" class="buy-button">Beli Sekarang</a>
+                            <h3 class="product-title">Depo Isi Ulang Paket Mineral + Bio</h3>
+                            <p class="product-price">Rp.26.000.000</p>
+                            <a href="katalog.html" class="buy-button">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -943,15 +1095,15 @@
                     <div class="partner-card p-4 mb-4 border rounded shadow-sm">
                         <div class="row align-items-center">
                             <div class="col-md-4 text-center">
-                                <img src="partner2.jpg" alt="Partner 2" class="img-fluid">
+                                <img src="asset/image'/produk/logo-pompa-Grundfos.jpg" alt="Partner 2" class="img-fluid">
                             </div>
                             <div class="col-md-8 ">
-                                <h4 class="mb-2 ">Toray Industries</h4>
-                                <p class="text-muted ">(Global Water Solutions)</p>
+                                <h4 class="mb-2 ">Grundfos</h4>
+                                <p class="text-muted ">(produsen pompa submersible)</p>
                                 <ul>
-                                    <li>Pemimpin dalam pengembangan teknologi filtrasi.</li>
-                                    <li>Produk yang ramah lingkungan dan tahan lama.</li>
-                                    <li>Layanan dukungan teknis di seluruh dunia.</li>
+                                    <li>Pompa Air yang Andal untuk Semua Kebutuhan Anda!".</li>
+                                    <li>Dari Rumah ke Industri, Grundfos Memberikan Solusi Pompa Terbaik!"</li>
+                                    <li>Hemat Energi dan Tahan Lama, Pilih Grundfos untuk Aliran Air yang Sempurna!"</li>
                                 </ul>
                             </div>
                         </div>
@@ -961,7 +1113,41 @@
                     <div class="partner-card p-4 mb-4 border rounded shadow-sm ">
                         <div class="row align-items-center ">
                             <div class="col-md-4 text-center ">
-                                <img src="partner3.jpg " alt="Partner 3 " class="img-fluid">
+                                <img src="asset/image'/produk/logo-nanotec-filter-400x284.jpg" alt="Partner 3 " class="img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                                <h4 class="mb-2 ">NANOTEC</h4>
+                                <p class="text-muted ">(Teknologi penyaringan air berkualitas)</p>
+                                <ul>
+                                    <li>Teknologi inovatif untuk filtrasi air modern.</li>
+                                    <li>Solusi hemat biaya untuk air bersih.</li>
+                                    <li>Teknologi Penyaring Air untuk Kualitas Hidup Lebih Baik!".</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card p-4 mb-4 border rounded shadow-sm ">
+                        <div class="row align-items-center ">
+                            <div class="col-md-4 text-center ">
+                                <img src="asset/image'/produk/ccc_logo-karbon-aktif-calgon-USA.jpg" alt="Partner 3 " class="img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                                <h4 class="mb-2 ">Calgon Carbon</h4>
+                                <p class="text-muted ">(Penyaring Andal untuk Air Murni dan Berkualitas)</p>
+                                <ul>
+                                    <li>Teknologi inovatif untuk filtrasi air modern.</li>
+                                    <li>Solusi hemat biaya untuk air bersih.</li>
+                                    <li>Teknologi Karbon Aktif untuk Kebersihan Maksimal!"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card p-4 mb-4 border rounded shadow-sm ">
+                        <div class="row align-items-center ">
+                            <div class="col-md-4 text-center ">
+                                <img src="asset/image'/produk/Dupont-logo.png" alt="Partner 3 " class="img-fluid">
                             </div>
                             <div class="col-md-8 ">
                                 <h4 class="mb-2 ">Dow Water</h4>
@@ -970,6 +1156,23 @@
                                     <li>Teknologi inovatif untuk filtrasi air modern.</li>
                                     <li>Solusi hemat biaya untuk air bersih.</li>
                                     <li>Keberlanjutan menjadi inti pengembangan produk.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card p-4 mb-4 border rounded shadow-sm ">
+                        <div class="row align-items-center ">
+                            <div class="col-md-4 text-center ">
+                                <img src="asset/image'/produk/logo-filmtec-membran-400x284.jpg" alt="Partner 3 " class="img-fluid">
+                            </div>
+                            <div class="col-md-8 ">
+                                <h4 class="mb-2 ">Filmtech</h4>
+                                <p class="text-muted ">(Penyaringan Air Terdepan untuk Kesempurnaan)</p>
+                                <ul>
+                                    <li>Penyaring Andal untuk Air Murni dan Berkualitas!.</li>
+                                    <li>Solusi hemat biaya untuk air bersih.</li>
+                                    <li>Solusi Reverse Osmosis Terbaik untuk Air Jernih dan Sehat.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1074,42 +1277,42 @@
                 <div class="testimonial-grid">
                     <!-- Testimonial 1 -->
                     <div class="testimonial-item">
-                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <img src="asset/image'/produk/customer RSUD wahidin husodo.png" alt="Building Icon" class="testimonial-icon">
                         <p class="testimonial-text">
                             Layanan dari CV Muji Perkasa sangat memuaskan. Teknisi mereka profesional dan sangat membantu dalam meningkatkan kualitas air di depot kami. Spare part yang mereka sediakan juga berkualitas tinggi.
                         </p>
-                        <div class="testimonial-author">Anonim</div>
-                        <div class="testimonial-company">Company name</div>
+                        <div class="testimonial-author">Parman</div>
+                        <div class="testimonial-company">RSUD Dr Wahidin SudiroHusodo</div>
                     </div>
 
                     <!-- Testimonial 2 -->
                     <div class="testimonial-item">
-                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <img src="asset/image'/produk/SMP Permata.jpg" alt="Building Icon" class="testimonial-icon">
                         <p class="testimonial-text">
                             Kami telah bekerja sama dengan CV Muji Perkasa untuk pengolahan limbah di hotel kami. Mereka memberikan solusi yang efisien dan ramah lingkungan. Sangat merekomendasikan layanan mereka!
                         </p>
-                        <div class="testimonial-author">Anonim</div>
-                        <div class="testimonial-company">Company name</div>
+                        <div class="testimonial-author">Sulastri</div>
+                        <div class="testimonial-company">SMPIT Permata Mojokerto</div>
                     </div>
 
                     <!-- Testimonial 3 -->
                     <div class="testimonial-item">
-                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <img src="asset/image'/produk/tejo abadi.jpg" alt="Building Icon" class="testimonial-icon">
                         <p class="testimonial-text">
                             "CV Muji Perkasa telah menjadi mitra terpercaya kami dalam pengelolaan air dan limbah. Layanan perawatan yang mereka tawarkan membuat sistem kami berjalan dengan optimal tanpa masalah."
                         </p>
-                        <div class="testimonial-author">Anonim</div>
-                        <div class="testimonial-company">Company name</div>
+                        <div class="testimonial-author">tejo</div>
+                        <div class="testimonial-company">CV Tejo Abadi</div>
                     </div>
 
                     <!-- Testimonial 4 -->
                     <div class="testimonial-item">
-                        <img src="/api/placeholder/60/60" alt="Building Icon" class="testimonial-icon">
+                        <img src="asset/image'/produk/Arya Mandiri.jpg" alt="Building Icon" class="testimonial-icon">
                         <p class="testimonial-text">
                             "CV Muji Perkasa telah menjadi mitra terpercaya kami dalam pengelolaan air dan limbah. Layanan perawatan yang mereka tawarkan membuat sistem kami berjalan dengan optimal tanpa masalah."
                         </p>
-                        <div class="testimonial-author">Anonim</div>
-                        <div class="testimonial-company">Company name</div>
+                        <div class="testimonial-author">Arya</div>
+                        <div class="testimonial-company"> Cv Arya Mandiri</div>
                     </div>
                 </div>
             </div>
@@ -1123,8 +1326,7 @@
                     <!-- FAQ Item 1 -->
                     <div class="accordion-item text-start">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed text-start" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse1">
+                            <button class="accordion-button collapsed text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
                                 <span>1. Apa itu sistem filtrasi air dan bagaimana cara kerjanya?</span>
                             </button>
                         </h2>
@@ -1209,35 +1411,39 @@
 
         <!-- email -->
         <div class="contact-section">
+            <div section id="contact-section" class="py-16 bg-blue-50"></div>
+            <div>
+
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <form id="contactForm">
                             <div class="mb-3">
-                                <label class="form-label" for="">Your Name</label>
+                                <label class="form-label" for="">Nama Anda</label>
                                 <input type="text" class="form-control" placeholder="Masukkan Username" name="user_name" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Email</label>
+                                <label class="form-label">Email Anda </label>
                                 <input type="email" class="form-control" name="user_email" placeholder="Masukkan Email" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Message</label>
+                                <label class="form-label">Pesan</label>
                                 <textarea class="form-control" name="message" rows="5" placeholder="Masukkan Pesan"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
                             <div class="alert" id="status-message" role="alert"></div>
                         </form>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-info">
-                            <h2>CONTACT US</h2>
-                            <p class="subtitle">WE ARE AVAILABLE 24/7</p>
-                            <p>12 Pike St, New York, NY 10002</p>
-                            <p>12 Pike St, New York, NY 10002</p>
-                            <p><strong>Email:</strong>arilmamat71@gmail.com</p>
-                            <p><strong>Phone number</strong></p>
-                            <p>1-541-754-3010</p>
+                            <h2>Kontak Kami</h2>
+                            <p class="subtitle">Kami Buka Pukul 08.00 - 15.00 WIB </p>
+                            <p><strong>Alamat :</strong> Ngaglik baitul makmur 6</p>
+                            <p>Ngaglik, kranggan , Mojokerto, Jawa Timur</p>
+                            <p><strong>Email :</strong>muji.perkasacv@gmail.com</p>
+                            <p><strong>Nomor : 081230189558</strong></p>
+
                         </div>
                     </div>
                 </div>
@@ -1284,6 +1490,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="asset/bootstrap/js/bootstrap.bundle.min.js "></script>
 </body>
